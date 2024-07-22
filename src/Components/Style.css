@@ -1,0 +1,23 @@
+
+.row .col-4 .item button {
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 5px 6px;
+
+}
+
+/*      Footer       */
+.container_footer {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 30px; */
+    padding: 45px 0;
+    /* height: 120px; */
+    background-color: rgb(33 37 41); 
+}
+
+.container_footer span {
+    color: rgb(255 255 255);
+    /* text-align: center; */
+}
