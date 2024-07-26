@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ModalDetail = ({dataShoe}) => {
+const ModalDetail = ({dataShoe, data}) => {
   return (
     <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog modal-lg">
@@ -11,7 +11,7 @@ const ModalDetail = ({dataShoe}) => {
       </div>
       <div className="modal-body d-flex justify-content-center row">
         <img src={dataShoe.image} className='' alt="" />
-        <h5>Tên: {dataShoe.name}</h5>
+        <h5>Tên: {data.name}</h5>
         <p>Alias: {dataShoe.alias}</p>
         <p>Giá: {dataShoe.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
         <p>Mô tả: {dataShoe.description}</p>

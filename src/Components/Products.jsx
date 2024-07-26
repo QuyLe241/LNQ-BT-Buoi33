@@ -131,8 +131,10 @@ const Products = () => {
     //            Hiển thị phần tử đầu tiên
     // let [info, setInfo] = useState(arrShoes[0]);
     let [info, setInfo] = useState(arrShoes[0]);
+    console.log(info);
     let getDataShoe = (item) => {
       setInfo(item);
+      // console.log(setInfo);
     };
     // let getDataShoes = (shoe) => {
     //   setInfo(shoe);
@@ -147,18 +149,9 @@ const Products = () => {
             {arrShoes.map((item, index) => {
                 return (
                   <div className="item col-3 shadow p-3 mb-5 bg-body-tertiary rounded m-3" key={index}>
-                    <PropsProducts item={item}/>
-                    <div className="d-flex justify-content-center">
-                    <button onClick={() => {
-                      getDataShoe(item);
-                      console.log(getDataShoe);
-                    }} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Xem Chi Tiết
-                    </button>
-                    </div>
-                    <ModalDetail dataShoe={item} key={index}/>
-                    </div>
-
+                    <PropsProducts item={item} getData={getDataShoe}/>
+                    <ModalDetail dataShoe={item} key={index} data={info}/>
+                  </div>
                 )
             })}
         </div>
