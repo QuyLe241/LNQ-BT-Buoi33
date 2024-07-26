@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./Style.css"
+// import "./Style.css"
 import PropsProducts from './PropsProducts';
 import ModalDetail from './ModalDetail';
 
