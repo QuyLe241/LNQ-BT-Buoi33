@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Style.css"
 import PropsProducts from './PropsProducts';
 import ModalDetail from './ModalDetail';
@@ -127,28 +127,40 @@ const Products = () => {
           } 
     ];
 
+    //  State 
+    //            Hiển thị phần tử đầu tiên
+    // let [info, setInfo] = useState(arrShoes[0]);
+    let [info, setInfo] = useState(arrShoes[0]);
+    let getDataShoe = (item) => {
+      setInfo(item);
+    };
+    // let getDataShoes = (shoe) => {
+    //   setInfo(shoe);
+    // };
+
+
   return (
     <div className='container'>
         <h2 className='text-center mt-2 mb-2'>List Shoes</h2>
         <div className="row d-flex justify-content-around">
-            {/* <div className="col-4"> */}
-            {/*     Sử dụng vòng lặp để tạo items */}
+                {/* Sử dụng vòng lặp để tạo items */}
             {arrShoes.map((item, index) => {
                 return (
-                  <div className="item col-3 shadow p-3 mb-5 bg-body-tertiary rounded m-3">
+                  <div className="item col-3 shadow p-3 mb-5 bg-body-tertiary rounded m-3" key={index}>
                     <PropsProducts item={item}/>
                     <div className="d-flex justify-content-center">
-                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button onClick={() => {
+                      getDataShoe(item);
+                      console.log(getDataShoe);
+                    }} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Xem Chi Tiết
                     </button>
                     </div>
-                    <ModalDetail detail={item}/>
+                    <ModalDetail dataShoe={item} key={index}/>
                     </div>
 
                 )
             })}
-
-            {/* </div> */}
         </div>
     </div>
   )
