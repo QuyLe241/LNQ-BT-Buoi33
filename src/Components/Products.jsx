@@ -127,25 +127,25 @@ const Products = () => {
 
   return (
     <div className='container'>
-        <h2 className='text-center'>Shoes Shop</h2>
-        <div className="row">
-            <div className="col col-4">
+        <h2 className='text-center'>List Shoes</h2>
+        <div className="row d-flex justify-content-around">
+            {/* <div className="col-4"> */}
             {/*     Sử dụng vòng lặp để tạo items */}
             {arrShoes.map((item, index) => {
                 return (
-                    <div className="item" key={index}>
-                        <img src={item.image} alt="Ảnh giày" />
+                    <div className="item col-3 shadow p-3 mb-5 bg-body-tertiary rounded m-3" key={index}>
+                        <img src={item.image} className='w-100' alt="Ảnh giày" />
                         <h3>{item.name}</h3>
-                        <p>Giá {item.price}</p>
+                        <p>Giá {item.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
                         {/* <p>Còn: {item.quantity}</p> */}
                         <p></p>
-                        <button>Xem chi tiết</button>
+                        <button className=''>Xem chi tiết</button>
 
                     </div>
                 )
             })}
 
-            </div>
+            {/* </div> */}
         </div>
     </div>
   )
