@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Style.css"
+import PropsProducts from './PropsProducts';
 
 const Products = () => {
     let arrShoes = [
@@ -127,21 +128,22 @@ const Products = () => {
 
   return (
     <div className='container'>
-        <h2 className='text-center'>List Shoes</h2>
+        <h2 className='text-center mt-2 mb-2'>List Shoes</h2>
         <div className="row d-flex justify-content-around">
             {/* <div className="col-4"> */}
             {/*     Sử dụng vòng lặp để tạo items */}
             {arrShoes.map((item, index) => {
                 return (
-                    <div className="item col-3 shadow p-3 mb-5 bg-body-tertiary rounded m-3" key={index}>
-                        <img src={item.image} className='w-100' alt="Ảnh giày" />
-                        <h3>{item.name}</h3>
-                        <p>Giá {item.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
-                        {/* <p>Còn: {item.quantity}</p> */}
-                        <p></p>
-                        <button className=''>Xem chi tiết</button>
+                    // <div className="item col-3 shadow p-3 mb-5 bg-body-tertiary rounded m-3" key={index}>
+                    //     <img src={item.image} className='w-100' alt="Ảnh giày" />
+                    //     <h3>{item.name}</h3>
+                    //     <p>Giá {item.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
+                    //     {/* <p>Còn: {item.quantity}</p> */}
+                    //     <p></p>
+                    //     <button className=''>Xem chi tiết</button>
 
-                    </div>
+                    // </div>
+                    <PropsProducts item={item}/>
                 )
             })}
 
