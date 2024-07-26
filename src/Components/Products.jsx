@@ -142,7 +142,7 @@ const Products = () => {
                     Xem Chi Tiết
                     </button>
                     </div>
-                    <ModalDetail/>
+                    <ModalDetail detail={item}/>
                     </div>
 
                 )
