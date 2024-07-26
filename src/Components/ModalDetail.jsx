@@ -10,12 +10,12 @@ const ModalDetail = ({dataShoe, data}) => {
         {/* <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" /> */}
       </div>
       <div className="modal-body d-flex justify-content-center row">
-        <img src={dataShoe.image} className='' alt="" />
+        <img src={data.image} className='' alt="" />
         <h5>Tên: {data.name}</h5>
-        <p>Alias: {dataShoe.alias}</p>
-        <p>Giá: {dataShoe.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
-        <p>Mô tả: {dataShoe.description}</p>
-        <p>Số lượng: {dataShoe.quantity}</p>
+        <p>Alias: {data.alias}</p>
+        <p>Giá: {data.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
+        <p>Mô tả: {data.description}</p>
+        <p>Số lượng: {data.quantity}</p>
         
       </div>
       <div className="modal-footer">

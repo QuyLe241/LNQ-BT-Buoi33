@@ -136,9 +136,6 @@ const Products = () => {
       setInfo(item);
       // console.log(setInfo);
     };
-    // let getDataShoes = (shoe) => {
-    //   setInfo(shoe);
-    // };
 
 
   return (
