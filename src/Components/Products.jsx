@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Style.css"
 import PropsProducts from './PropsProducts';
+import ModalDetail from './ModalDetail';
 
 const Products = () => {
     let arrShoes = [
@@ -134,16 +135,16 @@ const Products = () => {
             {/*     Sử dụng vòng lặp để tạo items */}
             {arrShoes.map((item, index) => {
                 return (
-                    // <div className="item col-3 shadow p-3 mb-5 bg-body-tertiary rounded m-3" key={index}>
-                    //     <img src={item.image} className='w-100' alt="Ảnh giày" />
-                    //     <h3>{item.name}</h3>
-                    //     <p>Giá {item.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
-                    //     {/* <p>Còn: {item.quantity}</p> */}
-                    //     <p></p>
-                    //     <button className=''>Xem chi tiết</button>
-
-                    // </div>
+                  <div className="item col-3 shadow p-3 mb-5 bg-body-tertiary rounded m-3">
                     <PropsProducts item={item}/>
+                    <div className="d-flex justify-content-center">
+                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Xem Chi Tiết
+                    </button>
+                    </div>
+                    <ModalDetail/>
+                    </div>
+
                 )
             })}
 
